@@ -77,7 +77,7 @@ class Tetris:
                             j + self.figure.x < 0 or \
                             self.field[i + self.figure.y][j + self.figure.x] > 0:
                         intersection = True
-                        print(self.figure.y, ",", self.figure.x)  # code test line
+                        print(self.figure.y, ",", self.figure.x)  # TODO: code test line
         return intersection
 
     def break_lines(self):
@@ -107,6 +107,7 @@ class Tetris:
             self.freeze()
 
     def freeze(self):
+        i: int
         for i in range(4):
             for j in range(4):
                 if i * 4 + j in self.figure.image():
